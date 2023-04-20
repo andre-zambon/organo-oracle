@@ -1,3 +1,4 @@
+import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
@@ -24,6 +25,9 @@ const Formulario = () => {
                 <CampoTexto label='Imagem' placeholder="Digite a URL da imagem"/>
                 {/* Passa a lista de times como propriedade (props) para ser usada pelo componente Lista Suspensa */}
                 <ListaSuspensa label='Time' itens={times}/> 
+                <Botao>
+                    Criar Card {/* Children do elemento botão */}
+                </Botao>
             </form>
         </section>
     )
