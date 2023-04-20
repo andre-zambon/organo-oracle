@@ -50,8 +50,7 @@ function App() {
   const aoNovoColaboradorAdicionado = (colaborador) => {
   //cria um novo array, espalha os colaboradores antigos e adciona o novo ao array. Array que grava os colaboradores cadastrados
   setColaboradores([...colaboradores, colaborador]) 
-  console.log(colaboradores)
-}
+  }
  
   return (
    

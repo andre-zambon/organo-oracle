@@ -4,7 +4,7 @@ const Colaborador = (props) => {
     return (
         <div className="colaborador">
             {/* acessa as props do colaborador passadas no componente Time */}
-            <div className="cabecalho">
+            <div className="cabecalho" style={{backgroundColor: props.corDeFundo}}>
                 <img src={props.imagem} alt={props.nome}></img>
             </div>
 
