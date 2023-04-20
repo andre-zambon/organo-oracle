@@ -58,7 +58,7 @@ function App() {
    <div className="App">
      
       <Banner/>
-      <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/> {/*recebe os valores dos inputs como "colaborador e passa para a funcação " */}
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/> {/*recebe os valores dos inputs como "colaborador e passa para a funcação " */}
       
       {/* percorre a lista de times e acessa o nome do time para dar nome ao time */}
       {/* para cada time, dentro da lista de times, cria um componente com o do time nome da lista */}
