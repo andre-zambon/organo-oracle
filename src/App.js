@@ -64,10 +64,12 @@ function App() {
       {/* para cada time, dentro da lista de times, cria um componente com o do time nome da lista */}
       
       {times.map(time => <Time 
-                          nome={time.nome} 
                           key={time.nome} 
+                          nome={time.nome} 
                           corPrimaria={time.corPrimaria} 
-                          corSecundaria={time.corSecundaria}/>)} 
+                          corSecundaria={time.corSecundaria}
+                          //insere a constante que guarda os colaboradores como uma props e filtra para passar de acordo com o time 
+                          colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}/>)} 
       
     </div>
   );
