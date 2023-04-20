@@ -1,6 +1,7 @@
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import { useState } from 'react';
+import Time from './componentes/Time';
 
 function App() {
 
@@ -18,7 +19,9 @@ const aoNovoColaboradorAdicionado = (colaborador) => {
      
       <Banner/>
       <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/> {/*recebe os valores dos inputs como "colaborador e passa para a funcação " */}
-      console.log(colaboradores)
+      <Time nome="Programação" />
+      <Time nome="Front-End" />
+
     </div>
   );
 }
