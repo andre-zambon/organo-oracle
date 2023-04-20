@@ -16,15 +16,22 @@ const Formulario = () => {
         'Mobile'
     ]
 
+
+    const aoSalvar = (evento) => {
+        evento.preventDefault()
+        console.log ('submetido')
+
+    }
+
     return (
         <section className="formulario">
-            <form>
+            <form onSubmit={aoSalvar}>  {/*onSubmit é um evento padrão do JavaScript, nesse caso, ao submeter o form executa a função */}
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <CampoTexto label='Nome' placeholder="Digite seu nome"/>
-                <CampoTexto label='Cargo' placeholder="Digite seu cargo"/>
+                <CampoTexto obrigatorio = {true} label='Nome' placeholder="Digite seu nome"/>
+                <CampoTexto obrigatorio = {true} label='Cargo' placeholder="Digite seu cargo"/>
                 <CampoTexto label='Imagem' placeholder="Digite a URL da imagem"/>
                 {/* Passa a lista de times como propriedade (props) para ser usada pelo componente Lista Suspensa */}
-                <ListaSuspensa label='Time' itens={times}/> 
+                <ListaSuspensa obrigatorio = {true} label='Time' itens={times}/> 
                 <Botao>
                     Criar Card {/* Children do elemento botão */}
                 </Botao>

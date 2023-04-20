@@ -6,7 +6,7 @@ const CampoTexto = (props) => { //Recebe as propriedade (parâmetros informados 
          <div className = "campo-texto"> 
          {// acessa a propriedade label e usa o valor definido no parâmetro no app.js 
             <label>{props.label}</label> }
-            <input placeholder={props.placeholder}></input>
+            <input required={props.obrigatorio} placeholder={props.placeholder}></input>
         </div>
     )
 }
