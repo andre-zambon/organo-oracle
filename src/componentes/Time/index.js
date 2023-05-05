@@ -12,12 +12,18 @@ const Time = (props) => {
         //style recebe um objeto e a segunda chave cria um objeto
        <section className='time' style={{backgroundColor: props.corSecundaria}}> 
 
+       <input type='color' className='input-cor'/>
+
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
             
             <div className='colaboradores'>
                 {/* acessa a constante que tem os colaboradores que foram cadastrados, e retorna pra cada um, o card 
                 já recebendo as props */}
-                {props.colaboradores.map(colaborador => <Colaborador key={colaborador.nome} corDeFundo={props.corPrimaria}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+                {props.colaboradores.map(colaborador => {
+                  
+                  return <Colaborador key={colaborador.nome} corDeFundo={props.corPrimaria}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
+                  
+                } )}
             </div>
         
         </section>

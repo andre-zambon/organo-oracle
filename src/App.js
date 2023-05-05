@@ -47,6 +47,10 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState([])
 
+  const aoDeletar = () => {
+    console.log('deleta colaborador')
+  }
+
   const aoNovoColaboradorAdicionado = (colaborador) => {
   //cria um novo array, espalha os colaboradores antigos e adciona o novo ao array. Array que grava os colaboradores cadastrados
   setColaboradores([...colaboradores, colaborador]) 
@@ -62,13 +66,17 @@ function App() {
       {/* percorre a lista de times e acessa o nome do time para dar nome ao time */}
       {/* para cada time, dentro da lista de times, cria um componente com o do time nome da lista */}
       
-      {times.map(time => <Time 
-                          key={time.nome} 
-                          nome={time.nome} 
-                          corPrimaria={time.corPrimaria} 
-                          corSecundaria={time.corSecundaria}
-                          //insere a constante que guarda os colaboradores como uma props e filtra para passar de acordo com o time 
-                          colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}/>)} 
+      {times.map(time =>
+       <Time 
+            key={time.nome} 
+            nome={time.nome} 
+            corPrimaria={time.corPrimaria} 
+            corSecundaria={time.corSecundaria}
+            //insere a constante que guarda os colaboradores como uma props e filtra para passar de acordo com o time 
+            colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
+            aoDeletar = {aoDeletar}
+        />
+      )} 
       
     </div>
   );

@@ -1,6 +1,7 @@
 .time {
     text-align: center;
     padding: 32px;
+    position: relative;
     
 }
 
@@ -17,6 +18,11 @@
     padding-bottom: 8px ;
     border-bottom: 8px solid ;
        
+}
+
+.input-cor{
+    position: absolute;
+    right: 30px;
 }
 
 
