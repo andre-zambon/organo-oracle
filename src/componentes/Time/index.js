@@ -12,7 +12,7 @@ const Time = (props) => {
         //style recebe um objeto e a segunda chave cria um objeto
        <section className='time' style={{backgroundColor: props.corSecundaria}}> 
 
-       <input type='color' className='input-cor'/>
+       <input type='color' className='input-cor' value={props.corSecundaria}/>
 
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
             

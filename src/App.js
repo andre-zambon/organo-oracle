@@ -16,7 +16,7 @@ function App() {
     {
       nome: 'Front-End',
       corPrimaria: '#57c278',
-      corSecundaria: '#d9f7e9'
+      corSecundaria: '#d9f7ab'
     },
 
     {
