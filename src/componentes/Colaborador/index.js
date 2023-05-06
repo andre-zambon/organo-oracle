@@ -22,6 +22,9 @@ const Colaborador = (props) => {
             <div className="rodape">
                 <h4>{props.nome}</h4>
                 <h5>{props.cargo}</h5>
+                <div className='favoritar'>
+                    {colaborador.favorito ? <AiFillHeart/> : <AiOutlineHeart/>}
+                </div>
             </div>
         </div>
             ) 

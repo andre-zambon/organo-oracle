@@ -34,7 +34,6 @@ const Time = (props) => {
 
                    <Colaborador 
                     key={colaborador.nome} 
-                    favorito={false} 
                     id={uuidv4()} 
                     colaborador={colaborador} 
                     corDeFundo={props.cor}  

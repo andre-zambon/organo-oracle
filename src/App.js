@@ -8,45 +8,43 @@ import { v4 as uuidv4 } from 'uuid'; //importa biblioteca que cria id - usa-se b
 function App() {
 
   // transforma o array em um estado para que o react possa rerenderizar as cores coma função setState
-  const [times, setTimes] = useState ([
-    
+  const [times, setTimes] = useState([
     {
       id: uuidv4(),
       nome: 'Programação',
-      cor: '#d9f7e9'
+      cor: '#57C278'
     },
-
     {
       id: uuidv4(),
       nome: 'Front-End',
-      cor: '#d9f7ab'
+      cor: '#82CFFA'
     },
-
     {
       id: uuidv4(),
-      nome: 'Ux e Design',
-      cor: '#d9f7e9'
+      nome: 'Data Science',
+      cor: '#A6D157'
     },
-
     {
       id: uuidv4(),
-      nome: 'DevOps',
-      cor: '#d9f7e9'
+      nome: 'Devops',
+      cor: '#E06B69'
     },
-
     {
       id: uuidv4(),
-      nome: 'Back-End',
-      cor: '#d9f7e9'
+      nome: 'UX e Design',
+      cor: '#DB6EBF'
     },
-
     {
       id: uuidv4(),
       nome: 'Mobile',
-      cor: '#d9f7e9'
-    }
-
-  ])
+      cor: '#FFBA05'
+    },
+    {
+      id: uuidv4(),
+      nome: 'Inovação e Gestão',
+      cor: '#FF8A29'
+    },
+  ]);
 
   
 
