@@ -1,5 +1,7 @@
 import Colaborador from '../Colaborador'
 import './Time.css'
+import { v4 as uuidv4 } from 'uuid'; //importa biblioteca que cria id - usa-se biblioteca pois o componente filho não consegue passar informações para o pai
+
 
 const Time = (props) => {
     return (
@@ -25,9 +27,9 @@ const Time = (props) => {
                 {/* acessa a constante que tem os colaboradores que foram cadastrados, e retorna pra cada um, o card 
                 já recebendo as props */}
                 {props.colaboradores.map(colaborador => {
-                  
-                  return <Colaborador key={colaborador.nome} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
-                  
+                    
+                    
+                  return <Colaborador key={colaborador.nome} id={uuidv4()} colaborador={colaborador} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
                 } )}
             </div>
         

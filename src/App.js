@@ -48,16 +48,25 @@ function App() {
 
   ])
 
+  
+
   const [colaboradores, setColaboradores] = useState([])
 
-  const aoDeletar = () => {
-    console.log('deleta colaborador')
+  function deletaColaborador (id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id )) //filtra para exibir apenas os colab. com id iguais, os diferentes serão excluídos
+  }
+
+  function cadastrarTime (novoTime) {
+    setTimes([...times, {...novoTime, id: uuidv4()}])
   }
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
   //cria um novo array, espalha os colaboradores antigos e adciona o novo ao array. Array que grava os colaboradores cadastrados
-  setColaboradores([...colaboradores, colaborador]) 
+  setColaboradores([...colaboradores, colaborador, colaborador.id=uuidv4()]) //adciona o id a cada colaborador criado
+  
   }
+
+
 
 
   // função que muda cor do time ou colaborador
@@ -76,7 +85,11 @@ function App() {
    <div className="App">
      
       <Banner/>
-      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/> {/*recebe os valores dos inputs como "colaborador e passa para a funcação " */}
+      <Formulario 
+        times={times.map(time => time.nome)} 
+        aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
+        cadastrarTime={cadastrarTime}
+      /> {/*recebe os valores dos inputs como "colaborador e passa para a funcação " */}
       
       {/* percorre a lista de times e acessa o nome do time para dar nome ao time */}
       {/* para cada time, dentro da lista de times, cria um componente com o do time nome da lista */}
@@ -88,9 +101,10 @@ function App() {
             cor={time.cor} 
             //insere a constante que guarda os colaboradores como uma props e filtra para passar de acordo com o time 
             colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
-            aoDeletar = {aoDeletar}
+            aoDeletar = {deletaColaborador}
             mudaCorTime = {mudaCor}
             id={time.id}
+            
             />
             )} 
       

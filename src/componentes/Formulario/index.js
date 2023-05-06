@@ -18,7 +18,9 @@ const Formulario = (props) => {
     const [nome, setNome] = useState('') 
     const [cargo, setCargo] = useState('') 
     const [imagem, setImagem] = useState('') 
-    const [time, setTime] = useState('') 
+    const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('') 
+    const [corTime, setCorTime] = useState('')
 
 
     const aoSalvar = (evento) => {
@@ -70,7 +72,7 @@ const Formulario = (props) => {
                 {/* Passa a lista de times como propriedade (props) para ser usada pelo componente Lista Suspensa */}
                 <ListaSuspensa
                 obrigatorio = {true} 
-                label='Time' 
+                label='Times' 
                 itens={props.times}
                 valor={time}
                 aoAlterado={valor => setTime(valor)}
@@ -80,6 +82,36 @@ const Formulario = (props) => {
                     Criar Card {/* Children do elemento botão */}
                 </Botao>
             </form>
+
+            <form onSubmit={(evento) => {
+                evento.preventDefault()
+                props.cadastrarTime({nome: nomeTime, cor: corTime})
+            }}>  {/*onSubmit é um evento padrão do JavaScript, nesse caso, ao submeter o form executa a função */}
+                
+                <h2>Preencha os dados para criar o novo time</h2>
+                
+                <CampoTexto 
+                obrigatorio = {true} 
+                label='Nome'
+                placeholder="Digite o nome do novo time"
+                valor={nomeTime}
+                aoAlterado={valor => setNomeTime(valor)} //acessa o valor que foi alterado(valor) e seta com ovalor recebido
+                />
+
+                <CampoTexto 
+                obrigatorio = {true} 
+                label='Cor' 
+                placeholder="Digite a cor do novo time"
+                valor={corTime}
+                aoAlterado={valor => setCorTime(valor)}
+                />
+
+                <Botao>
+                    Criar novo time {/* Children do elemento botão */}
+                </Botao>
+            </form>
+
+
         </section>
     )
 }
