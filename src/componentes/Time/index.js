@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'; //importa biblioteca que cria id - usa-se b
 
 
 const Time = (props) => {
+    
     return (
         //não podermo escrever "if" dentro do JSX
         //redenderização condicional (if). "se o tamanho da array for maio que 00 então(?) executa o que estiver a seguir, se não
@@ -29,7 +30,20 @@ const Time = (props) => {
                 {props.colaboradores.map(colaborador => {
                     
                     
-                  return <Colaborador key={colaborador.nome} id={uuidv4()} colaborador={colaborador} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
+                  return(
+
+                   <Colaborador 
+                    key={colaborador.nome} 
+                    favorito={false} 
+                    id={uuidv4()} 
+                    colaborador={colaborador} 
+                    corDeFundo={props.cor}  
+                    nome={colaborador.nome} 
+                    cargo={colaborador.cargo} 
+                    imagem={colaborador.imagem} 
+                    aoDeletar={props.aoDeletar}
+                    />
+                  )
                 } )}
             </div>
         

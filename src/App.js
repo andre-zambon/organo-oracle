@@ -66,9 +66,6 @@ function App() {
   
   }
 
-
-
-
   // função que muda cor do time ou colaborador
   function mudaCor (cor, id) { //recebe o nome do time e a cor que vem do input color
     setTimes(times.map(time => { //map recebe time e a condicional 
@@ -78,6 +75,7 @@ function App() {
       return time //retorna para o array do map o time com a cor alterada
     }))
   }
+
 
   
   return (
@@ -104,7 +102,6 @@ function App() {
             aoDeletar = {deletaColaborador}
             mudaCorTime = {mudaCor}
             id={time.id}
-            
             />
             )} 
       
