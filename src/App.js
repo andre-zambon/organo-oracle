@@ -2,6 +2,8 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import { useState } from 'react';
 import Time from './componentes/Time';
+import { v4 as uuidv4 } from 'uuid'; //importa biblioteca que cria id - usa-se biblioteca pois o componente filho não consegue passar informações para o pai
+
 
 function App() {
 
@@ -9,31 +11,37 @@ function App() {
   const [times, setTimes] = useState ([
     
     {
+      id: uuidv4(),
       nome: 'Programação',
       cor: '#d9f7e9'
     },
 
     {
+      id: uuidv4(),
       nome: 'Front-End',
       cor: '#d9f7ab'
     },
 
     {
+      id: uuidv4(),
       nome: 'Ux e Design',
       cor: '#d9f7e9'
     },
 
     {
+      id: uuidv4(),
       nome: 'DevOps',
       cor: '#d9f7e9'
     },
 
     {
+      id: uuidv4(),
       nome: 'Back-End',
       cor: '#d9f7e9'
     },
 
     {
+      id: uuidv4(),
       nome: 'Mobile',
       cor: '#d9f7e9'
     }
@@ -53,9 +61,9 @@ function App() {
 
 
   // função que muda cor do time ou colaborador
-  function mudaCor (cor, nome) { //recebe o nome do time e a cor que vem do input color
+  function mudaCor (cor, id) { //recebe o nome do time e a cor que vem do input color
     setTimes(times.map(time => { //map recebe time e a condicional 
-      if(time.nome === nome) {
+      if(time.id === id) {
         time.cor = cor
       }
       return time //retorna para o array do map o time com a cor alterada
@@ -82,6 +90,7 @@ function App() {
             colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar = {aoDeletar}
             mudaCorTime = {mudaCor}
+            id={time.id}
             />
             )} 
       

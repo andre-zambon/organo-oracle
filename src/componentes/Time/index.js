@@ -12,14 +12,14 @@ const Time = (props) => {
         //style recebe um objeto e a segunda chave cria um objeto
        <section className='time' style={{backgroundColor: props.cor}}> 
 
-       <input 
-        type='color' 
-        className='input-cor' 
-        onChange={evento => props.mudaCorTime(evento.target.value, props.nome)} 
-        value={props.cor}
-        />
+            <input 
+                type='color' 
+                className='input-cor' 
+                onChange={evento => props.mudaCorTime(evento.target.value, props.id)} 
+                value={props.cor}
+            />
 
-            <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
+            <h3 style={{borderColor: props.cor}}>{props.nome}</h3>
             
             <div className='colaboradores'>
                 {/* acessa a constante que tem os colaboradores que foram cadastrados, e retorna pra cada um, o card 
