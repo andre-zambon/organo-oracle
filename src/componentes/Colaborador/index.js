@@ -1,4 +1,5 @@
 import {RiDeleteBinLine} from 'react-icons/ri' //importa o item da biblioteca de icones
+import hexToRgba from 'hex-to-rgba'; //importa conversor de hexadecimal para rgba
 import './Colaborador.css'
 
 
@@ -11,7 +12,7 @@ const Colaborador = (props) => {
             <RiDeleteBinLine className='deletar' onClick={props.aoDeletar}/>
 
             {/* acessa as props do colaborador passadas no componente Time */}
-            <div className="cabecalho" style={{backgroundColor: props.corDeFundo}}>
+            <div className="cabecalho" style={{backgroundColor: hexToRgba('props.corDeFundo', '0.6') }}>
                 <img src={props.imagem} alt={props.nome}></img>
             </div>
 

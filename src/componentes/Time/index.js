@@ -10,9 +10,14 @@ const Time = (props) => {
         (props.colaboradores.length > 0) ?
         
         //style recebe um objeto e a segunda chave cria um objeto
-       <section className='time' style={{backgroundColor: props.corSecundaria}}> 
+       <section className='time' style={{backgroundColor: props.cor}}> 
 
-       <input type='color' className='input-cor' value={props.corSecundaria}/>
+       <input 
+        type='color' 
+        className='input-cor' 
+        onChange={evento => props.mudaCorTime(evento.target.value, props.nome)} 
+        value={props.cor}
+        />
 
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
             
@@ -21,7 +26,7 @@ const Time = (props) => {
                 já recebendo as props */}
                 {props.colaboradores.map(colaborador => {
                   
-                  return <Colaborador key={colaborador.nome} corDeFundo={props.corPrimaria}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
+                  return <Colaborador key={colaborador.nome} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
                   
                 } )}
             </div>
