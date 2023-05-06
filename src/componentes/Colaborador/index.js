@@ -1,4 +1,4 @@
-import { AiFillCloseCircle } from 'react-icons/ai'; //importa o item da biblioteca de icones
+import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai'; //importa o item da biblioteca de icones
 import './Colaborador.css'
 import hexToRgba from 'hex-to-rgba'; //importa conversor de hexadecimal para rgba
 
@@ -22,6 +22,9 @@ const Colaborador = (props) => {
             <div className="rodape">
                 <h4>{props.nome}</h4>
                 <h5>{props.cargo}</h5>
+                <div className='favoritar'>
+                    {colaborador.favorito ? <AiFillHeart/> : <AiOutlineHeart/>}
+                </div>
             </div>
         </div>
             ) 

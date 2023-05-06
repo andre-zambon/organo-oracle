@@ -29,7 +29,7 @@ const Time = (props) => {
                 {props.colaboradores.map(colaborador => {
                     
                     
-                  return <Colaborador key={colaborador.nome} id={uuidv4()} colaborador={colaborador} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
+                  return <Colaborador key={colaborador.nome} favorito={false} id={uuidv4()} colaborador={colaborador} corDeFundo={props.cor}  nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} aoDeletar={props.aoDeletar}/>
                 } )}
             </div>
         
