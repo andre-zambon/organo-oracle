@@ -1,6 +1,6 @@
-import './CampoTexto.css'
+import './Campo.css'
 
-const CampoTexto = (props) => { //Recebe as propriedade (parâmetros informados no app.js) do objeto. pode usar qualquer nome para variável
+const Campo = (props) => { //Recebe as propriedade (parâmetros informados no app.js) do objeto. pode usar qualquer nome para variável
 
 
    
@@ -20,4 +20,4 @@ const CampoTexto = (props) => { //Recebe as propriedade (parâmetros informados 
     )
 }
 
-export default CampoTexto
+export default Campo
