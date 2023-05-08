@@ -1,4 +1,4 @@
-import {RiDeleteBinLine} from 'react-icons/ri' //importa o item da biblioteca de icones
+import { AiFillCloseCircle } from 'react-icons/ai'; //importa o item da biblioteca de icones
 import './Colaborador.css'
 import hexToRgba from 'hex-to-rgba'; //importa conversor de hexadecimal para rgba
 
@@ -9,7 +9,7 @@ const Colaborador = (props) => {
                 <div className="colaborador">
                 
             {/* insere o item de deletar o colaborador */}
-            <RiDeleteBinLine 
+            <AiFillCloseCircle 
                 className='deletar' 
                 onClick={() => props.aoDeletar(props.colaborador.id)}
                 />
